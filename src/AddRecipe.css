@@ -1,0 +1,91 @@
+h1{
+    color: rgb(35, 35, 35);
+}
+
+.add-recipe{
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    background-color: rgba(235,234,229,255);
+    border-radius: 20px;
+}
+
+.img-info{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0px;
+}
+
+.img-input{
+    position: absolute;
+}
+
+.add-recipe-img{
+    margin-top: 100px;
+    width: 80%;
+    height: max-content;
+}
+
+.recipe-info{
+    width: 50%;
+    display: block;
+}
+
+
+.inputs input {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(110, 110, 110);
+    background-color: rgba(235,234,229,255);
+    width: 25%;
+    height: auto;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+  
+.input input:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+  
+.input input:active {
+    transform: scale(0.95);
+}
+  
+.input input:focus {
+    border: 2px solid grey;
+}
+
+.inputs textarea{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(110, 110, 110);
+    width: 100%;
+    height: 200px;
+    border: 1px solid #888;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    background-color: rgba(235,234,229,255);
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1.5px solid lightgrey;
+}
+  
+.add-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addbutton{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+}

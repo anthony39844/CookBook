@@ -1,0 +1,102 @@
+.recipe{
+    background-color: rgba(235,234,229,255);
+    border-radius: 20px;
+    display: flex;
+}
+
+.recipe-img{
+    padding: 20px 20px;
+    width: 40%;
+    height: auto;
+}
+
+.recipe-description{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(35, 35, 35);
+    margin-left: 20px;
+    align-items: center;
+    text-align: left;
+}
+
+hr{
+    width: 200%;
+}
+
+.recipe-description p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(110, 110, 110);
+    align-items: center;
+    text-align: left;
+}
+
+.time-diff{
+    color: rgb(110, 110, 110);
+    display: flex;
+    align-items: center;
+}
+.time-diff p{
+    padding-left: 10px;
+}
+#difficulty{
+    padding-left: 30px;
+}
+
+/* Button */
+
+.button {
+    margin-top: 20px;
+    --primary-color: rgba(57,71,68,255);
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+  
+.button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+  
+.button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+.button:hover {
+    background-color: var(--hover-color);
+}
+.button:hover .arrow {
+    background: var(--secondary-color);
+}
+.button:hover .arrow:before {
+    right: 0;
+}
