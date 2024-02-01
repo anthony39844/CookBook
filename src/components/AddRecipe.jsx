@@ -1,5 +1,6 @@
 import '../AddRecipe.css'
 import React, { useState } from 'react';
+import RecipeList from '../RecipeList';
 
 export function AddRecipe(){
     const [selectedFile, setSelectedFile] = useState(null);
@@ -7,6 +8,20 @@ export function AddRecipe(){
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [steps, setSteps] = useState('');
+    const [recipes, setRecipes] = useState([])
+
+    const newRecipe = () => {
+        setRecipes([...recipes, {            
+            name : name,
+            description : description,
+            ingredients : ingredients,
+            steps : steps}]);
+
+        setName('');
+        setDescription('');
+        setIngredients([]);
+        setSteps([]);
+    }
 
     const handleFileChange = (event) => {
       const file = event.target.files[0];
@@ -64,13 +79,14 @@ export function AddRecipe(){
             </div>
         </div>
         <div className='add-button'>
-            <button className='button addbutton'>
+            <button className='button addbutton' onClick={newRecipe}>
                 Add
                 <div className="arrow-wrapper">
                 <div className="arrow"></div>
                 </div>
             </button>
         </div>
+        <RecipeList recipeList={recipes}/>
       </div>
     );
 }
