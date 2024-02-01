@@ -86,7 +86,7 @@ export function AddRecipe(){
                 </div>
             </button>
         </div>
-        <RecipeList recipeList={recipes}/>
+        <RecipeList recipeList={recipes} style={{ display: "none" }} />
       </div>
     );
 }
