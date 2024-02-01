@@ -1,4 +1,4 @@
-import './AddRecipe.css'
+import '../AddRecipe.css'
 import React, { useState } from 'react';
 
 export function AddRecipe(){
