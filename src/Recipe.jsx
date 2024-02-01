@@ -9,7 +9,7 @@ function Recipe(data){
     return(
         <div>
             <div className='recipe'>
-                <img className='recipe-img' src={data.picture} alt = "Food Preview"></img>
+                <img className='recipe-img' src="pasta.jpeg" alt = "Food Preview"></img>
                 <div className="recipe-description">
                     <h1>{data.name}</h1>
                     <div className='time-diff'>

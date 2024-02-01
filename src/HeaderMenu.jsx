@@ -20,7 +20,7 @@ export function HeaderMenu(){
             <Routes>
                 <Route path="/"  element={<Home />} />
                 <Route path="/RecipeList" element={<RecipeList />} />
-                <Route path="/AddRecipe" element={<AddRecipe list = {1}/>} />
+                <Route path="/AddRecipe" element={<AddRecipe/>} />
             </Routes>
         </Router>
         

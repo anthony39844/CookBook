@@ -1,6 +1,6 @@
 import '../AddRecipe.css'
 import React, { useState } from 'react';
-import RecipeList from '../RecipeList';
+import RecipeList from './RecipeList';
 
 export function AddRecipe(){
     const [selectedFile, setSelectedFile] = useState(null);
@@ -86,7 +86,7 @@ export function AddRecipe(){
                 </div>
             </button>
         </div>
-        <RecipeList recipeList={recipes} style={{ display: "none" }} />
+        {false && <RecipeList recipeList={recipes}/>}
       </div>
     );
 }
