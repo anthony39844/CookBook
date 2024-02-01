@@ -1,6 +1,7 @@
 import '../AddRecipe.css'
 import React, { useState } from 'react';
-import RecipeList from '../RecipeList';
+import RecipeList from './RecipeList';
+import Recipe from '../Recipe';
 
 export function AddRecipe(){
     const [selectedFile, setSelectedFile] = useState(null);
@@ -10,18 +11,19 @@ export function AddRecipe(){
     const [steps, setSteps] = useState('');
     const [recipes, setRecipes] = useState([])
 
-    const newRecipe = () => {
-        setRecipes([...recipes, {            
-            name : name,
-            description : description,
-            ingredients : ingredients,
-            steps : steps}]);
+    // const newRecipe = () => {
+    //     setRecipes([...recipes, {            
+    //         name : name,
+    //         description : description,
+    //         ingredients : ingredients,
+    //         steps : steps}]);
 
-        setName('');
-        setDescription('');
-        setIngredients([]);
-        setSteps([]);
-    }
+    //     setName('');
+    //     setDescription('');
+    //     setIngredients([]);
+    //     setSteps([]);
+    // }
+
 
     const handleFileChange = (event) => {
       const file = event.target.files[0];
@@ -44,6 +46,10 @@ export function AddRecipe(){
         setSteps(event.target.value);
     };
   
+    const handleAdd = () => {
+        setRecipes([...recipes, <Recipe picture={selectedFile} RecipieName = {name} description={description}></Recipe>]);
+        console.log([...recipes, <Recipe picture={selectedFile} RecipieName = {name} description={description}></Recipe>]);
+    }
     return (
       <div>
         <h1>Add Recipe</h1>
@@ -79,14 +85,14 @@ export function AddRecipe(){
             </div>
         </div>
         <div className='add-button'>
-            <button className='button addbutton' onClick={newRecipe}>
+            <button className='button addbutton' onClick={()=>handleAdd()}>
                 Add
                 <div className="arrow-wrapper">
                 <div className="arrow"></div>
                 </div>
             </button>
         </div>
-        <RecipeList recipeList={recipes}/>
+
       </div>
     );
 }

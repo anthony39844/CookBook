@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import RecipeList from './RecipeList.jsx';
+import RecipeList from './components/RecipeList.jsx';
 import { AddRecipe } from './components/AddRecipe.jsx';
 import  "./HeaderMenu.css";
 
@@ -18,9 +18,9 @@ export function HeaderMenu(){
             </nav>
             </div>
             <Routes>
-                <Route path="/" exact element={<Home />} />
+                <Route path="/"  element={<Home />} />
                 <Route path="/RecipeList" element={<RecipeList />} />
-                <Route path="/AddRecipe" element={<AddRecipe />} />
+                <Route path="/AddRecipe" element={<AddRecipe list = {1}/>} />
             </Routes>
         </Router>
         
