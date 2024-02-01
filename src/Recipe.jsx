@@ -4,25 +4,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 
-export function Recipe(){
+export function Recipe(data){
+    console.log(data)
     return(
         <div>
             <div className='recipe'>
                 <img className='recipe-img' src='/public/pasta.jpeg'></img>
                 <div className="recipe-description">
-                    <h1>Name of the recipe</h1>
+                    <h1>{data.RecipeName}</h1>
                     <div className='time-diff'>
                         <FontAwesomeIcon id='clock' icon={faClock} />
-                        <p>16 min</p>
-                        <p id='difficulty'>easy</p> 
+                        <p>{data.time} min</p>
+                        <p id='difficulty'>{data.difficulty}</p> 
                     </div>
-                    <p>Description of the recipe</p>
+                    <p>{data.description}</p>
                     <p>Link to the whole recipe</p>
                     <hr></hr>
                     <button className='button'>
                         Full Recipe
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
+                        <div className="arrow-wrapper">
+                            <div className="arrow"></div>
 
                         </div>
                     </button>

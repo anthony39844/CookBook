@@ -66,8 +66,8 @@ export function AddRecipe(){
         <div className='add-button'>
             <button className='button addbutton'>
                 Add
-                <div class="arrow-wrapper">
-                <div class="arrow"></div>
+                <div className="arrow-wrapper">
+                <div className="arrow"></div>
                 </div>
             </button>
         </div>
