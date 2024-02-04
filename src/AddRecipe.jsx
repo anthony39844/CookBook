@@ -17,6 +17,7 @@ export function AddRecipe({ addingRecipe }) {
         const id = uuidv4()
         let recipe =  {  
             key: id,
+            id: id,
             image : image,          
             name : name,
             timeNeed: timeNeed,
@@ -26,14 +27,14 @@ export function AddRecipe({ addingRecipe }) {
             steps : steps
         };
         addingRecipe(recipe);
-        const updatedRecipes = [...recipes, {image: image, name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
+        const updatedRecipes = [...recipes, {key: id, id: id, image: image, name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
         setName('');
         setTimeNeed('');
         setDifficulty('Easy');
         setDescription('');
         setIngredients([]);
         setSteps([]);
-        setImage(null);
+        setImage('');
         setRecipes(updatedRecipes);
     }
 
