@@ -7,19 +7,18 @@ import './RecipeList.css';
 
 
 function RecipeList() {
-  const [recipes, setRecipes] = useState([])
-  // const [recipes, setRecipes] = useState(()=>{
-  //   const localValue = localStorage.getItem("ITEMS")
-  //   console.log(localValue)
-  //   if (localValue == null){
-  //     return []
-  //   }
-  //   return JSON.parse(localValue)
-  // })
-  // useEffect(() => {
-  //   localStorage.setItem("ITEMS", JSON.stringify(recipes))
-  //   console.log(recipes)
-  // },[recipes])
+  const [recipes, setRecipes] = useState(()=>{
+    const localValue = localStorage.getItem("ITEMS")
+    console.log(localValue)
+    if (localValue == null){
+      return []
+    }
+    return JSON.parse(localValue)
+  })
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(recipes))
+    console.log(recipes)
+  },[recipes])
   useEffect(() =>{
     console.log(recipes)
   },[recipes])
@@ -28,13 +27,7 @@ function RecipeList() {
     setRecipes([...recipes, newRecipe]);
   }
   function deleteRecipe(id) {
-    let updated = []
-    for (let i = 0; i<recipes.length;i++){
-      if (recipes[i].id !== id){
-        updated.push(recipes[i])
-      }
-    }
-    setRecipes(updated)
+    setRecipes(recipes.filter(recipe => recipe.id !== id))
   }
   return (
     <>
