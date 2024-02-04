@@ -21,6 +21,8 @@ function RecipeList() {
           <Recipe 
           key={uuidv4()}
           name={recipe.name}
+          timeNeed={recipe.timeNeed}
+          difficulty={recipe.difficulty}
           description={recipe.description}
           ingredients={recipe.ingredients}
           steps={recipe.steps}

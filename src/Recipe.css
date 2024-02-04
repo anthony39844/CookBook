@@ -5,10 +5,36 @@
     margin: 0px 10px 10px 0px;
 }
 
+.recipe-head{
+    margin-right: 20px;
+}
+
+.recipe-name{
+    max-width: fit-content;
+}
+
+.time-diff{
+    color: rgb(110, 110, 110);
+    display: flex;
+    align-items: center;
+}
+
+.time-diff p{
+    padding-left: 10px;
+}
+
 .recipe-img{
     padding: 20px 20px;
     width: 40%;
-    height: auto;
+    height: fit-content;
+}
+
+.recipe-body{
+    margin-top: 10px;
+    max-height: 150px; 
+    max-width: fit-content; 
+    overflow-y: auto;
+    margin-right: 20px;
 }
 
 .recipe-description{
@@ -16,10 +42,13 @@
     color: rgb(35, 35, 35);
     margin-left: 20px;
     align-items: center;
+    justify-content: center;
     text-align: left;
+    width: fit-content;
 }
 
 hr{
+    margin-left: 0;
     width: 100%;
 }
 
@@ -30,21 +59,10 @@ hr{
     text-align: left;
 }
 
-.time-diff{
-    color: rgb(110, 110, 110);
-    display: flex;
-    align-items: center;
-}
-.time-diff p{
-    padding-left: 10px;
-}
-#difficulty{
-    padding-left: 30px;
-}
-
 /* Button */
 
 .button {
+    margin-bottom: 10px;
     margin-top: 20px;
     --primary-color: rgba(57,71,68,255);
     --secondary-color: #fff;

@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 export function AddRecipe({ addingRecipe }) {
     const [selectedFile, setSelectedFile] = useState(null);
     const [name, setName] = useState('');
-    const [time, setTime] = useState('');
+    const [timeNeed, setTimeNeed] = useState('');
+    const [difficulty, setDifficulty] = useState('Easy');
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [steps, setSteps] = useState('');
@@ -13,13 +14,17 @@ export function AddRecipe({ addingRecipe }) {
     const handleAddRecipe = () => {
         let recipe =  {            
             name : name,
+            timeNeed: timeNeed,
+            difficulty: difficulty,
             description : description,
             ingredients : ingredients,
             steps : steps
         };
         addingRecipe(recipe);
-        const updatedRecipes = [...recipes, {name : name, description : description, ingredients : ingredients, steps : steps}]
+        const updatedRecipes = [...recipes, {name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
         setName('');
+        setTimeNeed('');
+        setDifficulty('Easy');
         setDescription('');
         setIngredients([]);
         setSteps([]);
@@ -36,7 +41,11 @@ export function AddRecipe({ addingRecipe }) {
     };
 
     const handleTimeChange = (event) => {
-        setTime(event.target.value);
+        setTimeNeed(event.target.value);
+    };
+
+    const handleDiffChange = (event) => {
+        setDifficulty(event.target.value);
     };
 
     const handleDescChange = (event) => {
@@ -63,8 +72,8 @@ export function AddRecipe({ addingRecipe }) {
             <div className="recipe-info">
                 <div className="top-info">
                     <input type="text" placeholder='Name' value={name} onChange={handleNameChange}></input>
-                    <input type="text" placeholder='Time (min)' value={time} onChange={handleTimeChange}></input>
-                    <select className='difficulty'>
+                    <input type="text" placeholder='Time (min)' value={timeNeed} onChange={handleTimeChange}></input>
+                    <select className='difficulty' onChange={handleDiffChange}>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>

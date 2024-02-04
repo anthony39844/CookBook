@@ -5,21 +5,29 @@ import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 
 function Recipe(data){
-
     return(
         <div>
             <div className='recipe'>
+            
                 <img className='recipe-img' src="pasta.jpeg" alt = "Food Preview"></img>
                 <div className="recipe-description">
-                    <h1>{data.name}</h1>
-                    <div className='time-diff'>
-                        <FontAwesomeIcon id='clock' icon={faClock} />
-                        <p>{data.time} min</p>
-                        <p id='difficulty'>{}</p> 
+                    <div className='recipe-head'>
+                        <div className='recipe-name'>
+                            <h1>{data.name}</h1>
+                        </div>
+                        <div className='time-diff'>
+                            <FontAwesomeIcon id='clock' icon={faClock} />
+                            <p>{data.timeNeed} minutes</p>
+                            <p>{data.difficulty}</p> 
+                        </div>
                     </div>
-                    <p>{data.description}</p>
-                    <p>Link to the whole recipe</p>
-                    <hr></hr>
+                    <div className="recipe-body">
+                        <p>{data.description}</p>
+                        <p>{data.ingredients}</p>
+                        <p>{data.steps}</p>
+                        <p>Link to the whole recipe</p>
+                    </div>
+                    _____________________________________
                     <button className='button'>
                         Full Recipe
                         <div className="arrow-wrapper">
