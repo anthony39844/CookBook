@@ -27,7 +27,7 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                         <p>{steps}</p>
                         <p>Link to the whole recipe</p>
                     </div>
-                    _____________________________________
+                    <hr></hr>
                     <div className='recipe-buttons'>
                     <Link className = "Link-full" to="/Recipe">
                         <button className='button'>
