@@ -28,7 +28,8 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                         <p>Link to the whole recipe</p>
                     </div>
                     _____________________________________
-                    <Link to="/Recipe">
+                    <div className='recipe-buttons'>
+                    <Link className = "Link-full" to="/Recipe">
                         <button className='button'>
                             Full Recipe
                             <div className="arrow-wrapper">
@@ -37,6 +38,7 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                         </button>
                     </Link>
                     <button className='button' onClick={()=>deleteRecipe(id)}>Delete</button>
+                    </div>
                 </div>
             </div>
 

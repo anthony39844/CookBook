@@ -119,3 +119,13 @@ hr{
 .button:hover .arrow:before {
     right: 0;
 }
+.recipe-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+.recipe-buttons button{
+    padding: 20px;
+}
+.Link-full {
+    margin: 0px 0px 0px 0px;
+}
