@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import Recipe from './Recipe.jsx';
+import Recipe from './RecipePreview.jsx';
 import { v4 as uuidv4 } from 'uuid';
 import { AddRecipe } from './AddRecipe.jsx';
 import './RecipeList.css';
