@@ -2,6 +2,7 @@ import {React, useState} from 'react';
 import RecipePreview from './RecipePreview.jsx';
 import { v4 as uuidv4 } from 'uuid';
 import { AddRecipe } from './AddRecipe.jsx';
+import Recipe from './Recipe.jsx';
 import './RecipeList.css';
 
 function RecipeList() {
@@ -11,23 +12,34 @@ function RecipeList() {
   function addingRecipe(newRecipe){
     setRecipes([...recipes, newRecipe]);
   }
-
   return (
     <>
     <div className='recipe-and-add'>
       <div className='recipe-list'>
         <ul style={{ listStyle: 'none', fontSize: '20px'}}>
         {recipes && recipes.map((recipe) => (
-          <RecipePreview 
-          key={uuidv4()}
-          image={recipe.image}
-          name={recipe.name}
-          timeNeed={recipe.timeNeed}
-          difficulty={recipe.difficulty}
-          description={recipe.description}
-          ingredients={recipe.ingredients}
-          steps={recipe.steps}
-          />
+          <div>
+            <RecipePreview 
+            key={uuidv4()}
+            image={recipe.image}
+            name={recipe.name}
+            timeNeed={recipe.timeNeed}
+            difficulty={recipe.difficulty}
+            description={recipe.description}
+            ingredients={recipe.ingredients}
+            steps={recipe.steps}
+            />
+            {false && <Recipe
+            key={uuidv4()}
+            image={recipe.image}
+            name={recipe.name}
+            timeNeed={recipe.timeNeed}
+            difficulty={recipe.difficulty}
+            description={recipe.description}
+            ingredients={recipe.ingredients}
+            steps={recipe.steps}
+            />}
+          </div>
         ))}
       </ul>
       </div>

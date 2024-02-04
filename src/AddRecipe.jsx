@@ -9,7 +9,7 @@ export function AddRecipe({ addingRecipe }) {
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [steps, setSteps] = useState('');
-    const [recipes, setRecipes] = useState([])
+    const [recipes, setRecipes] = useState([]);
 
     const handleAddRecipe = () => {
         let recipe =  {  
