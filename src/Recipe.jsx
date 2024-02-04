@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 function Recipe(data){
-    console.log(data)
     return(
         <div>
             <div className='recipe'>

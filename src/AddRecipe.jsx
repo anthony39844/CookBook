@@ -1,5 +1,7 @@
 import './AddRecipe.css'
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid'
+
 
 export function AddRecipe({ addingRecipe }) {
     const [image, setImage] = useState('');
@@ -11,8 +13,10 @@ export function AddRecipe({ addingRecipe }) {
     const [steps, setSteps] = useState('');
     const [recipes, setRecipes] = useState([]);
 
-    const handleAddRecipe = () => {
+    const handleAddRecipe = () => { 
+        const id = uuidv4()
         let recipe =  {  
+            key: id,
             image : image,          
             name : name,
             timeNeed: timeNeed,

@@ -35,6 +35,7 @@ function RecipePreview(data){
                                 <div className="arrow"></div>
                             </div>
                         </button>
+                        <button className='button' onClick={()=>data.deleteRecipe(data.id)}>Delete</button>
                     </Link>
                 </div>
             </div>
