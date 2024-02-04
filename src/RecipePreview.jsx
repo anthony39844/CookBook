@@ -2,6 +2,7 @@ import './RecipePreview.css'
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 function RecipePreview(data){
@@ -27,13 +28,14 @@ function RecipePreview(data){
                         <p>Link to the whole recipe</p>
                     </div>
                     _____________________________________
-                    <button className='button'>
-                        Full Recipe
-                        <div className="arrow-wrapper">
-                            <div className="arrow"></div>
-
-                        </div>
-                    </button>
+                    <Link to="/Recipe">
+                        <button className='button'>
+                            Full Recipe
+                            <div className="arrow-wrapper">
+                                <div className="arrow"></div>
+                            </div>
+                        </button>
+                    </Link>
                 </div>
             </div>
 
