@@ -20,6 +20,7 @@ function RecipeList() {
         {recipes && recipes.map((recipe) => (
           <Recipe 
           key={uuidv4()}
+          image={recipe.image}
           name={recipe.name}
           timeNeed={recipe.timeNeed}
           difficulty={recipe.difficulty}

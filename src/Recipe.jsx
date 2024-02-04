@@ -8,8 +8,7 @@ function Recipe(data){
     return(
         <div>
             <div className='recipe'>
-            
-                <img className='recipe-img' src="pasta.jpeg" alt = "Food Preview"></img>
+                <img className='recipe-img' src={data.image} alt = "Food Preview"></img>
                 <div className="recipe-description">
                     <div className='recipe-head'>
                         <div className='recipe-name'>

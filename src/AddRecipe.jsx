@@ -2,7 +2,7 @@ import './AddRecipe.css'
 import React, { useState } from 'react';
 
 export function AddRecipe({ addingRecipe }) {
-    const [selectedFile, setSelectedFile] = useState(null);
+    const [image, setImage] = useState('');
     const [name, setName] = useState('');
     const [timeNeed, setTimeNeed] = useState('');
     const [difficulty, setDifficulty] = useState('Easy');
@@ -12,7 +12,8 @@ export function AddRecipe({ addingRecipe }) {
     const [recipes, setRecipes] = useState([])
 
     const handleAddRecipe = () => {
-        let recipe =  {            
+        let recipe =  {  
+            image : image,          
             name : name,
             timeNeed: timeNeed,
             difficulty: difficulty,
@@ -21,19 +22,20 @@ export function AddRecipe({ addingRecipe }) {
             steps : steps
         };
         addingRecipe(recipe);
-        const updatedRecipes = [...recipes, {name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
+        const updatedRecipes = [...recipes, {image: image, name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
         setName('');
         setTimeNeed('');
         setDifficulty('Easy');
         setDescription('');
         setIngredients([]);
         setSteps([]);
+        setImage(null);
         setRecipes(updatedRecipes);
     }
 
-    const handleFileChange = (event) => {
-      const file = event.target.files[0];
-      setSelectedFile(file);
+    const handleImgChange = (event) => {
+      const img_name = event.target.files[0].name;
+      setImage(img_name);
     };
 
     const handleNameChange = (event) => {
@@ -64,9 +66,9 @@ export function AddRecipe({ addingRecipe }) {
       <div>
         <div className="add-recipe">
             <div className='img-info'>
-                <input className='img-input' type="file" accept="image/*" onChange={handleFileChange} />
-                {selectedFile && (
-                    <img className='add-recipe-img' src={selectedFile.name}></img>
+                <input className='img-input' type="file" accept="image/*" onChange={handleImgChange} />
+                {image && (
+                    <img className='add-recipe-img' src={image}></img>
                 )}
             </div>
             <div className="recipe-info">
