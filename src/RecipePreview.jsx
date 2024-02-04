@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 
-function Recipe(data){
+function RecipePreview(data){
     return(
         <div>
             <div className='recipe'>
-                <img className='recipe-img' src={data.image} alt = "Food Preview"></img>
+                <img className='recipe-img' src={data.image} alt = "Food Image"></img>
                 <div className="recipe-description">
                     <div className='recipe-head'>
                         <div className='recipe-name'>
@@ -40,4 +40,4 @@ function Recipe(data){
         </div>
     )
 }
-export default Recipe;
+export default RecipePreview;

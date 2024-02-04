@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import Recipe from './RecipePreview.jsx';
+import RecipePreview from './RecipePreview.jsx';
 import { v4 as uuidv4 } from 'uuid';
 import { AddRecipe } from './AddRecipe.jsx';
 import './RecipeList.css';
@@ -18,7 +18,7 @@ function RecipeList() {
       <div className='recipe-list'>
         <ul style={{ listStyle: 'none', fontSize: '20px'}}>
         {recipes && recipes.map((recipe) => (
-          <Recipe 
+          <RecipePreview 
           key={uuidv4()}
           image={recipe.image}
           name={recipe.name}
