@@ -9,7 +9,6 @@ import './RecipeList.css';
 function RecipeList() {
   const [recipes, setRecipes] = useState(()=>{
     const localValue = localStorage.getItem("ITEMS")
-    console.log(localValue)
     if (localValue == null){
       return []
     }
@@ -17,10 +16,7 @@ function RecipeList() {
   })
   useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(recipes))
-    console.log(recipes)
-  },[recipes])
-  useEffect(() =>{
-    console.log(recipes)
+
   },[recipes])
 
   function addingRecipe(newRecipe){
@@ -35,7 +31,8 @@ function RecipeList() {
       <div className='recipe-list'>
         <ul style={{ listStyle: 'none', fontSize: '20px'}}>
         {recipes && recipes.map((recipe) => (
-          <div>
+          <li key = {recipe.key}>
+            <div>
             {<RecipePreview 
             key={recipe.key}
             image={recipe.image}
@@ -49,8 +46,8 @@ function RecipeList() {
             deleteRecipe = {(id) => deleteRecipe(id)}
             />}
             
-            {/* {false && <Recipe
-            key={uuidv4()}
+            {false && <Recipe
+            key={recipe.key}
             image={recipe.image}
             name={recipe.name}
             timeNeed={recipe.timeNeed}
@@ -58,8 +55,10 @@ function RecipeList() {
             description={recipe.description}
             ingredients={recipe.ingredients}
             steps={recipe.steps}
-            />} */}
+            />}
           </div>
+          </li>
+          
         ))}
       </ul>
       </div>
