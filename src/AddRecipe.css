@@ -3,9 +3,8 @@ h1{
 }
 
 .add-recipe{
-    margin: 0px;
+    margin: 20px 20px 0px 0px;
     padding: 20px;
-    width: 100%;
     display: flex;
     background-color: rgba(235,234,229,255);
     border-radius: 20px;
@@ -29,9 +28,39 @@ h1{
     height: max-content;
 }
 
+.top-info{
+    display: inline-block;
+}
+
+.top-info input{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(110, 110, 110);
+    background-color: rgba(235,234,229,255);
+    width: 25%;
+    height: auto;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+    margin-right: 10px;
+}
+
 .recipe-info{
     width: 50%;
-    display: block;
+}
+
+.time-info{
+    width: 50%;
+}
+
+.difficulty{
+    background-color: rgba(235,234,229,255);
+    color: rgb(110, 110, 110);
+    border: 1.5px solid lightgrey;
+    border-radius: 12px;
+    padding: 4px;
 }
 
 
@@ -63,9 +92,10 @@ h1{
 }
 
 .inputs textarea{
+    padding: 8px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(110, 110, 110);
-    width: 100%;
+    width: 95%;
     height: 200px;
     border: 1px solid #888;
     outline: none;
@@ -79,8 +109,7 @@ h1{
   
 .add-button{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 15%;
 }
 
 .addbutton{

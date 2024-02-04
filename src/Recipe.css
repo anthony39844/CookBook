@@ -2,6 +2,7 @@
     background-color: rgba(235,234,229,255);
     border-radius: 20px;
     display: flex;
+    margin: 0px 10px 10px 0px;
 }
 
 .recipe-img{
@@ -19,7 +20,7 @@
 }
 
 hr{
-    width: 200%;
+    width: 100%;
 }
 
 .recipe-description p{

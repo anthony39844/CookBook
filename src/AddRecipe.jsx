@@ -1,26 +1,29 @@
-import '../AddRecipe.css'
+import './AddRecipe.css'
 import React, { useState } from 'react';
-import RecipeList from './RecipeList';
 
-export function AddRecipe(){
+export function AddRecipe({ addingRecipe }) {
     const [selectedFile, setSelectedFile] = useState(null);
     const [name, setName] = useState('');
+    const [time, setTime] = useState('');
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [steps, setSteps] = useState('');
     const [recipes, setRecipes] = useState([])
 
-    const newRecipe = () => {
-        setRecipes([...recipes, {            
+    const handleAddRecipe = () => {
+        let recipe =  {            
             name : name,
             description : description,
             ingredients : ingredients,
-            steps : steps}]);
-
+            steps : steps
+        };
+        addingRecipe(recipe);
+        const updatedRecipes = [...recipes, {name : name, description : description, ingredients : ingredients, steps : steps}]
         setName('');
         setDescription('');
         setIngredients([]);
         setSteps([]);
+        setRecipes(updatedRecipes);
     }
 
     const handleFileChange = (event) => {
@@ -30,6 +33,10 @@ export function AddRecipe(){
 
     const handleNameChange = (event) => {
         setName(event.target.value);
+    };
+
+    const handleTimeChange = (event) => {
+        setTime(event.target.value);
     };
 
     const handleDescChange = (event) => {
@@ -46,7 +53,6 @@ export function AddRecipe(){
   
     return (
       <div>
-        <h1>Add Recipe</h1>
         <div className="add-recipe">
             <div className='img-info'>
                 <input className='img-input' type="file" accept="image/*" onChange={handleFileChange} />
@@ -55,8 +61,14 @@ export function AddRecipe(){
                 )}
             </div>
             <div className="recipe-info">
-                <div className='inputs'>
+                <div className="top-info">
                     <input type="text" placeholder='Name' value={name} onChange={handleNameChange}></input>
+                    <input type="text" placeholder='Time (min)' value={time} onChange={handleTimeChange}></input>
+                    <select className='difficulty'>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
                 </div>
                 <div className='inputs'>
                     <textarea
@@ -79,14 +91,13 @@ export function AddRecipe(){
             </div>
         </div>
         <div className='add-button'>
-            <button className='button addbutton' onClick={newRecipe}>
+            <button className='button addbutton' onClick={handleAddRecipe}>
                 Add
                 <div className="arrow-wrapper">
                 <div className="arrow"></div>
                 </div>
             </button>
         </div>
-        {false && <RecipeList recipeList={recipes}/>}
       </div>
     );
 }

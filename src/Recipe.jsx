@@ -17,9 +17,8 @@ function Recipe(data){
                         <p>{data.time} min</p>
                         <p id='difficulty'>{}</p> 
                     </div>
-                    <p>Link to the whole recipe</p>
                     <p>{data.description}</p>
-
+                    <p>Link to the whole recipe</p>
                     <hr></hr>
                     <button className='button'>
                         Full Recipe
