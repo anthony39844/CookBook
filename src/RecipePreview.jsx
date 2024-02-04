@@ -22,10 +22,9 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                         </div>
                     </div>
                     <div className="recipe-body">
-                        <p>{description}</p>
-                        <p>{ingredients}</p>
-                        <p>{steps}</p>
-                        <p>Link to the whole recipe</p>
+                        <p>Description: {description}</p>
+                        <p>Ingredients: {ingredients}</p>
+                        <p>Steps: {steps}</p>
                     </div>
                     <hr></hr>
                     <div className='recipe-buttons'>
