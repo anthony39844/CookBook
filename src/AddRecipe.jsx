@@ -11,7 +11,6 @@ export function AddRecipe({ addingRecipe }) {
     const [description, setDescription] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [steps, setSteps] = useState('');
-    const [recipes, setRecipes] = useState([]);
 
     const handleAddRecipe = () => { 
         const id = uuidv4()
@@ -27,7 +26,6 @@ export function AddRecipe({ addingRecipe }) {
             steps : steps
         };
         addingRecipe(recipe);
-        const updatedRecipes = [...recipes, {key: id, id: id, image: image, name : name, time: timeNeed, diff: difficulty, description : description, ingredients : ingredients, steps : steps}]
         setName('');
         setTimeNeed('');
         setDifficulty('Easy');
@@ -35,7 +33,6 @@ export function AddRecipe({ addingRecipe }) {
         setIngredients([]);
         setSteps([]);
         setImage('');
-        setRecipes(updatedRecipes);
     }
 
     const handleImgChange = (event) => {
