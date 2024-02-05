@@ -2,10 +2,12 @@ import './RecipePreview.css'
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 
-function RecipePreview({ image, name, timeNeed, difficulty, description, ingredients, steps, id, deleteRecipe}){
+function RecipePreview({ image, name, timeNeed, difficulty, description, ingredients, steps, id, deleteRecipe, handleFull}){
+    const props = { image, name, timeNeed, difficulty, description, ingredients, steps, id};
+
     return(
         <div>
             <div className='recipe'>
@@ -29,19 +31,20 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                     </div>
                     <hr></hr>
                     <div className='recipe-buttons'>
-                    <Link className = "Link-full" to="/Recipe">
-                        <button className='button'>
+                        <nav>
+                        <Link className = "Link-full" to='/Full'>
+                        <button className='button' onClick={()=>handleFull(props)}>
                             Full Recipe
                             <div className="arrow-wrapper">
                                 <div className="arrow"></div>
                             </div>
                         </button>
                     </Link>
+                        </nav>
                     <button className='button' onClick={()=>deleteRecipe(id)}>Delete</button>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

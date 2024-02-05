@@ -3,8 +3,13 @@ import Home from './components/Home.jsx';
 import RecipeList from './RecipeList.jsx'
 import Recipe from './Recipe.jsx'
 import  "./HeaderMenu.css";
+import { useState } from 'react';
 
 export function HeaderMenu(){
+    const [currProps, setCurrProps] = useState({})
+    function handleFullRecipe (props){
+        setCurrProps(props)
+    }
     return(
         <>
         <Router>
@@ -18,8 +23,8 @@ export function HeaderMenu(){
             </div>
             <Routes>
                 <Route path="/"  element={<Home />} />
-                <Route path="/RecipeList" element={<RecipeList />} />
-                <Route path="/Recipe" element={<Recipe></Recipe>} />
+                <Route path="/RecipeList" element={<RecipeList handleFull={handleFullRecipe}/>} />
+                <Route path="/Full" element={<Recipe {...currProps}/>}/>
             </Routes>
         </Router>
         

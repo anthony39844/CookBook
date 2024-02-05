@@ -68,7 +68,7 @@ export function AddRecipe({ addingRecipe }) {
       <div>
         <div className="add-recipe">
             <div className='img-info'>
-                <input className='img-input' type="file" accept="image/*" onChange={handleImgChange} />
+                <input className='img-input' type="file" accept="image/*" onChange={(e)=>handleImgChange(e)} />
                 {image && (
                     <img className='add-recipe-img' src={image}></img>
                 )}
