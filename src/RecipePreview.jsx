@@ -30,7 +30,6 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                     </div>
                     <hr></hr>
                     <div className='recipe-buttons'>
-                        <nav>
                         <Link className = "Link-full" to='/Full'>
                         <button className='button' onClick={()=>handleFull(props)}>
                             Full Recipe
@@ -39,7 +38,6 @@ function RecipePreview({ image, name, timeNeed, difficulty, description, ingredi
                             </div>
                         </button>
                     </Link>
-                        </nav>
                     <button className='button' onClick={()=>deleteRecipe(id)}>Delete</button>
                     </div>
                 </div>
