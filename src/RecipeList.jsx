@@ -3,9 +3,10 @@ import RecipePreview from './RecipePreview.jsx';
 import { AddRecipe } from './AddRecipe.jsx';
 import Recipe from './Recipe.jsx';
 import './RecipeList.css';
+import { Route, Routes} from 'react-router-dom';
 
 
-function RecipeList() {
+function RecipeList({handleFull}) {
   const [recipes, setRecipes] = useState(()=>{
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null){
@@ -33,7 +34,7 @@ function RecipeList() {
           <li key = {recipe.key}>
             <div>
             {<RecipePreview 
-            key={recipe.key}
+
             image={recipe.image}
             name={recipe.name}
             timeNeed={recipe.timeNeed}
@@ -43,17 +44,7 @@ function RecipeList() {
             steps={recipe.steps}
             id={recipe.key}
             deleteRecipe = {(id) => deleteRecipe(id)}
-            />}
-            
-            {false && <Recipe
-            key={recipe.key}
-            image={recipe.image}
-            name={recipe.name}
-            timeNeed={recipe.timeNeed}
-            difficulty={recipe.difficulty}
-            description={recipe.description}
-            ingredients={recipe.ingredients}
-            steps={recipe.steps}
+            handleFull={handleFull}
             />}
           </div>
           </li>
