@@ -29,6 +29,13 @@
     height: fit-content;
 }
 
+.default-icon{
+    padding: 20px 20px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
 .recipe-body{
     margin-top: 10px;
     max-height: 150px; 

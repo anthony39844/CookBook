@@ -7,7 +7,9 @@ function Recipe({ image, name, timeNeed, difficulty, description, ingredients, s
     return(
         <div>
             <div className='recipe'>
-                <img className='recipe-img' src={image} alt = "Food Image"></img>
+                {image ? (<img  className='recipe-img' src={image} alt={name} />) 
+                : 
+                (<div className="default-icon">No Image</div>)}
                 <div className="recipe-description">
                     <div className='recipe-head'>
                         <div className='recipe-name'>
