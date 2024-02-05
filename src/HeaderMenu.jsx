@@ -1,9 +1,19 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home.jsx';
-import Recipe from './components/RecipeList.jsx';
-import { AddRecipe } from './components/AddRecipe.jsx';
-import  "./HeaderMenu.css";
+import RecipeList from './RecipeList.jsx'
+import Recipe from './Recipe.jsx'
+import  "./css/HeaderMenu.css";
+import { useState } from 'react';
+
 export function HeaderMenu(){
+    const [currProps, setCurrProps] = useState({})
+    const [recipes, setRecipes] = useState([])
+    function handleFullRecipe (props){
+        setCurrProps(props)
+    }
+    function updateRecipe (newRecipes){
+        setRecipes(newRecipes);
+    }
     return(
         <>
         <Router>
@@ -17,9 +27,9 @@ export function HeaderMenu(){
             </nav>
             </div>
             <Routes>
-                <Route path="/" exact element={<Home />} />
-                <Route path="/Recipe" element={<Recipe />} />
-                <Route path="/AddRecipe" element={<AddRecipe />} />
+                <Route path="/"  element={<Home allRecipies={recipes}/>} />
+                <Route path="/RecipeList" element={<RecipeList handleFull={handleFullRecipe} UpdateRecipe={updateRecipe}/>} />
+                <Route path="/Full" element={<Recipe {...currProps}/>}/>
             </Routes>
         </Router>
         
