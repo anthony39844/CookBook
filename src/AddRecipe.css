@@ -3,11 +3,16 @@ h1{
 }
 
 .add-recipe{
-    margin: 20px 20px 0px 0px;
-    padding: 20px;
-    display: flex;
-    background-color: rgba(235,234,229,255);
+    background-color: rgba(238,238,238,255);
     border-radius: 20px;
+    box-shadow:  8px 8px 16px #b7b7b7,
+    -8px -8px 16px #ffffff;
+    margin: 20px 20px 0px 40px;
+    padding: 20px;
+}
+
+.add-recipe-top{
+    display: flex;
 }
 
 .img-info{
@@ -28,22 +33,16 @@ h1{
     height: max-content;
 }
 
-.top-info{
-    display: inline-block;
-}
-
 .top-info input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(110, 110, 110);
-    background-color: rgba(235,234,229,255);
-    width: 25%;
+    background-color: rgba(238,238,238,255);
     height: auto;
     padding: 12px;
     border-radius: 12px;
     border: 1.5px solid lightgrey;
     outline: none;
     transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0px 0px 20px -18px;
     margin-right: 10px;
 }
 
@@ -52,22 +51,24 @@ h1{
 }
 
 .time-info{
-    width: 50%;
+    margin-top: 10px;
+    width: 40%;
 }
 
 .difficulty{
-    background-color: rgba(235,234,229,255);
+    background-color: rgba(238,238,238,255);
     color: rgb(110, 110, 110);
     border: 1.5px solid lightgrey;
     border-radius: 12px;
     padding: 4px;
+    margin-top: 10px;
 }
 
 
 .inputs input {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(110, 110, 110);
-    background-color: rgba(235,234,229,255);
+    background-color: rgba(238,238,238,255);
     width: 25%;
     height: auto;
     padding: 12px;
@@ -96,12 +97,12 @@ h1{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(110, 110, 110);
     width: 95%;
-    height: 200px;
+    height: 100px;
     border: 1px solid #888;
     outline: none;
     resize: none;
     overflow: auto;
-    background-color: rgba(235,234,229,255);
+    background-color: rgba(238,238,238,255);
     border-radius: 10px;
     margin-top: 10px;
     border: 1.5px solid lightgrey;
@@ -109,7 +110,8 @@ h1{
   
 .add-button{
     display: flex;
-    margin-left: 15%;
+    justify-content: center;
+    align-items: center;
 }
 
 .addbutton{

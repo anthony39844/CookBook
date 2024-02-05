@@ -67,49 +67,51 @@ export function AddRecipe({ addingRecipe }) {
     return (
       <div>
         <div className="add-recipe">
-            <div className='img-info'>
-                <input className='img-input' type="file" accept="image/*" onChange={(e)=>handleImgChange(e)} />
-                {image && (
-                    <img className='add-recipe-img' src={image}></img>
-                )}
+            <div className="add-recipe-top">
+                <div className='img-info'>
+                    <input className='img-input' type="file" accept="image/*" onChange={(e)=>handleImgChange(e)} />
+                    {image && (
+                        <img className='add-recipe-img' src={image}></img>
+                    )}
+                </div>
+                <div className="recipe-info">
+                    <div className="top-info">
+                        <input type="text" placeholder='Name' value={name} onChange={handleNameChange}></input>
+                        <input className='time-info' type="text" placeholder='Time (min)' value={timeNeed} onChange={handleTimeChange}></input>
+                        <select className='difficulty' onChange={handleDiffChange}>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div className='inputs'>
+                        <textarea
+                        value={description}
+                        onChange={handleDescChange}
+                        placeholder="Description"/>
+                    </div>
+                    <div className='inputs'>
+                        <textarea
+                        value={ingredients}
+                        onChange={handleIngredChange}
+                        placeholder="Ingredients"/>
+                    </div>
+                    <div className='inputs'>
+                        <textarea
+                        value={steps}
+                        onChange={handleStepsChange}
+                        placeholder="Steps"/>
+                    </div>
+                </div>
             </div>
-            <div className="recipe-info">
-                <div className="top-info">
-                    <input type="text" placeholder='Name' value={name} onChange={handleNameChange}></input>
-                    <input type="text" placeholder='Time (min)' value={timeNeed} onChange={handleTimeChange}></input>
-                    <select className='difficulty' onChange={handleDiffChange}>
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>
-                    </select>
-                </div>
-                <div className='inputs'>
-                    <textarea
-                    value={description}
-                    onChange={handleDescChange}
-                    placeholder="Description"/>
-                </div>
-                <div className='inputs'>
-                    <textarea
-                    value={ingredients}
-                    onChange={handleIngredChange}
-                    placeholder="Ingredients"/>
-                </div>
-                <div className='inputs'>
-                    <textarea
-                    value={steps}
-                    onChange={handleStepsChange}
-                    placeholder="Steps"/>
-                </div>
-            </div>
-        </div>
-        <div className='add-button'>
+            <div className='add-button'>
             <button className='button addbutton' onClick={handleAddRecipe}>
                 Add
                 <div className="arrow-wrapper">
                 <div className="arrow"></div>
                 </div>
             </button>
+            </div>
         </div>
       </div>
     );

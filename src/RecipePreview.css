@@ -1,8 +1,11 @@
 .recipe{
-    background-color: rgba(235,234,229,255);
+    background-color: rgba(238,238,238,255);
     border-radius: 20px;
     display: flex;
-    margin: 0px 10px 10px 0px;
+    align-items: center;
+    margin: 20px 10px 10px 0px;
+    box-shadow:  8px 8px 16px #b7b7b7,
+    -8px -8px 16px #ffffff;
 }
 
 .recipe-head{
@@ -26,7 +29,9 @@
 .recipe-img{
     padding: 20px 20px;
     width: 40%;
+    border-radius: 50%;
     height: fit-content;
+    
 }
 
 .default-icon{

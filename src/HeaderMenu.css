@@ -1,11 +1,12 @@
 .container {
-    background-color: rgba(235,234,229,255);;
+    background: linear-gradient(to right, rgba(190, 219, 191, 1) 0%, rgb(201, 223, 202) 100%);
     display: flex;
     align-items: flex-end;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 20px;
 }
 .container h1{
+    color: rgb(65, 65, 65);
     margin: 0px 0px 0px 0px;
     font-size: 50px;
     padding: 0px 20px;
@@ -16,9 +17,9 @@
     padding: 0px 20px;
 }
 .container a{
+    color: rgb(65, 65, 65);
     border-radius: 5px;
     text-decoration: none;
-    color: black;
 }
 .container:visited {
     text-decoration: none;
