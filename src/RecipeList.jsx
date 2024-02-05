@@ -1,9 +1,7 @@
 import {React, useEffect, useState} from 'react';
 import RecipePreview from './RecipePreview.jsx';
 import { AddRecipe } from './AddRecipe.jsx';
-import Recipe from './Recipe.jsx';
 import './RecipeList.css';
-import { Route, Routes} from 'react-router-dom';
 
 
 function RecipeList({handleFull}) {
@@ -21,9 +19,11 @@ function RecipeList({handleFull}) {
 
   function addingRecipe(newRecipe){
     setRecipes([...recipes, newRecipe]);
+    // update([...recipes, newRecipe])
   }
   function deleteRecipe(id) {
     setRecipes(recipes.filter(recipe => recipe.id !== id))
+    // update(recipes.filter(recipe => recipe.id !== id))
   }
   return (
     <>

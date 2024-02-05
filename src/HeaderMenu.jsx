@@ -23,7 +23,7 @@ export function HeaderMenu(){
             </div>
             <Routes>
                 <Route path="/"  element={<Home />} />
-                <Route path="/RecipeList" element={<RecipeList handleFull={handleFullRecipe}/>} />
+                <Route path="/RecipeList" element={<RecipeList handleFull={handleFullRecipe} />} />
                 <Route path="/Full" element={<Recipe {...currProps}/>}/>
             </Routes>
         </Router>
