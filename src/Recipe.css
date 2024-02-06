@@ -1,0 +1,18 @@
+.full-recipe{
+    width: fit-content;
+    background-color: rgba(238,238,238,255);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin: 20px 10px 10px 0px;
+    box-shadow:  8px 8px 16px #b7b7b7,
+    -8px -8px 16px #ffffff;
+}
+
+.full-recipe-body{
+    margin-top: 10px;
+    max-height: fit-content; 
+    max-width: fit-content; 
+    overflow-y: auto;
+    margin-right: 20px;
+}

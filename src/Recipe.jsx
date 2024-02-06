@@ -1,4 +1,5 @@
 import React from 'react';
+import './Recipe.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
