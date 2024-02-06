@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 
 function Recipe({ image, name, timeNeed, difficulty, description, ingredients, steps, id}){
-    console.log(id)
     return(
         <div>
             <div className='recipe'>

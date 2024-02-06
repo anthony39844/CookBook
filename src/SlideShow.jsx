@@ -32,7 +32,9 @@ function SlideShow({delay, slides}) {
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {slides.map((props) => (
-         <Recipe {...props}></Recipe>
+          <div className="slide" key = {props.id}>
+            <Recipe {...props}></Recipe>
+            </div>
         ))}
       </div>
 
